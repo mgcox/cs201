@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Uppercase Angular Greeting</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body class="container" ng-app="myApp">
+    <div ng-controller="messageCtrl">
+        <div class="row">
+             <div class="col-md-4 col-md-offset-4" style="text-align: center;">
+                <div class="form-group">
+                    <h2>Uppercase Angular Greeting</h2>        
+                </div>
+                <div class="form-group">
+                	<label for="firstName">First Name:</label>
+                    <input id="firstName" class="form-control" type="text" ng-model="firstName">
+                </div>
+                <div class="form-group">
+                	<label for="lastName">Last Name:</label>
+                    <input id="lastName" class="form-control" type="text" ng-model="lastName">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary" ng-click="message()">Message</button>
+                </div>
+				
+				<div>
+					Message: {{ message }}
+				</div>
+            </div>   
+        </div>
+    </div>
+    <script type="text/javascript">
+var app=angular.module('myApp',[]);app.controller('messageCtrl',function($scope){$scope.message=function(){$scope.message=("Hi "+$scope.firstName+" "+$scope.lastName+"!").toUpperCase();};});
+//]]></script>
+</body>
+</html>
